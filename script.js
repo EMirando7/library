@@ -1,6 +1,3 @@
-let newCommit = { done: true }
-
-
 let main = document.querySelector('main');
 let bookLibrary = [];
 let manageBookFuncs = {
