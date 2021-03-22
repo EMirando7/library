@@ -103,12 +103,9 @@ function addGridColumns() {
     if (bookUl.children.length == 0) {
         return
     }
-    else if (bookUl.children.length > 1) {
-        bookUl.style.gridTemplateColumns = "20em";
-        userBooksParent.style.border = "solid 2px";
-    }
     else {
-        bookUl.style.gridTemplateColumns = "20em";
+        userBooksParent.style.display = "grid"
+        userBooksParent.style.gridTemplateColumns = "20em 20em";
         userBooksParent.style.border = "solid 2px"
     }
 }
