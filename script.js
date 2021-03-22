@@ -57,12 +57,14 @@ function loopAndAddBooks() {
     for (let i of bookLibrary) {
         let cIndex = bookLibrary.indexOf(i);
         const liBtn = document.createElement('button');
+        liBtn.classList.add('removeBtn');
         const liBtn2 = document.createElement('button');
-        bookUl.innerHTML = `${i.title} <br> ${i.author} <br> ${i.pages} pages <br> Recommned? ${i.recommend}`;
-        bookUl.style.border = "solid 0.2px";;
-        liBtn2.classList.add("notRead");
+        liBtn2.classList.add("notReadBtn");
         liBtn.textContent = "Remove";
         liBtn2.textContent = "Done reading?";
+        bookUl.innerHTML = `Title: ${i.title} <br>Author: ${i.author} <br>Pages: ${i.pages} pages <br> Recommend? ${i.recommend}`;
+        bookUl.insertAdjacentElement('beforeend', liBtn);
+        bookUl.style.border = "solid 0.2px";
         addGridColumns();
         //delete the additional book slot
         if (bookLibrary.some((obj) => obj.title === i.title)) {

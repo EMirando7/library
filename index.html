@@ -1,50 +1,38 @@
 <!DOCTYPE html>
 <html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <link rel="stylesheet" href="style.css" />
+  </head>
 
-<head>
-    <meta charset="UTF-8">
-    <link rel="stylesheet" href="style.css">
-</head>
-
-<body>
+  <body>
     <header>
-        <h1>Book Library</h1>
+      <h1>Book Library</h1>
     </header>
 
-
     <main>
-        <button type="button">Add new book</button>
-        <!-- !list of books added -->
-        <section id="userAddedBooks"></section>
+      <button type="button">Add new book</button>
+      <!-- !list of books added -->
+      <section id="userAddedBooks"></section>
 
-        <!--!this form is hidden by default-->
-        <section id="formSec" hidden>
-            <form action="">
-                <ul>
-                    <li>
-                        <label for='bookTitleInput'>Title:</label>
-                        <input type="text" id='bookTitle'>
-                    </li>
-                    <li>
-                        <label for="bookAuthorInput">Author:</label>
-                        <input type="text" id='bookAuthor'>
-                    </li>
-                    <li id="liItem3">
-                        <label for="pageNumberInput">Number of pages:</label>
-                        <input id="pageNumberInput" type="text" maxlength="4">
-                    </li>
-                    <li id="liItem4">
-                        <label for="recommendOrNot">Recommend?</label>
-                        <input id="recommendOrNot" type="checkbox">
-                    </li>
-                </ul>
-            </form>
-        </section>
-
+      <!--!this form is hidden by default-->
+      <section id="formSec" hidden>
+        <form action="">
+          <ul>
+            <label for="bookTitleInput">Title:</label>
+            <input type="text" id="bookTitle" />
+            <label for="bookAuthorInput">Author:</label>
+            <input type="text" id="bookAuthor" />
+            <label for="pageNumberInput">Number of pages:</label>
+            <input id="pageNumberInput" type="text" maxlength="4" />
+            <label for="recommendOrNot">Recommend?</label>
+            <input id="recommendOrNot" type="checkbox" />
+          </ul>
+        </form>
+      </section>
     </main>
 
     <!-- <button type="button">Add new book</button> -->
     <script src="script.js"></script>
-</body>
-
+  </body>
 </html>
