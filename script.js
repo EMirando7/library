@@ -50,51 +50,51 @@ function loopAndAddBooks() {
     const userBooksParent = document.querySelector("#userAddedBooks");
     //! parent UL item, each book is an UL item
     const bookUl = document.createElement('ul');
-    bookUl.classList.add("addedChildBook"); //? parent UL item css
+    bookUl.classList.add("addedChildBook");
     userBooksParent.prepend(bookUl);
     let oddBtnTopValue = 9.2;
     let evenBtnTopValue = 9.2;
     for (let i of bookLibrary) {
-        let cIndex = bookLibrary.indexOf(i);
         const liBtn = document.createElement('button');
         liBtn.classList.add('removeBtn');
         const liBtn2 = document.createElement('button');
         liBtn2.classList.add("notReadBtn");
         liBtn.textContent = "Remove";
-        liBtn2.textContent = "Done reading?";
-        bookUl.innerHTML = `Title: ${i.title} <br>Author: ${i.author} <br>Pages: ${i.pages} pages <br> Recommend? ${i.recommend}`;
+        liBtn2.textContent = "Read?";
+        bookUl.innerHTML = `Title: ${i.title} <br>Author: ${i.author} <br>Pages: ${i.pages} pages <br> Completed? ${i.recommend}`;
         bookUl.insertAdjacentElement('beforeend', liBtn);
+        bookUl.insertAdjacentElement('beforeend', liBtn2);
         bookUl.style.border = "solid 0.2px";
         addGridColumns();
-        //delete the additional book slot
-        if (bookLibrary.some((obj) => obj.title === i.title)) {
-            bookLibrary.splice(cIndex, 1)
-        }
-        //odd remove li btns
+        liBtn.addEventListener('click', () => {
+            bookUl.setAttribute('hidden', '');
+        })
+        //odd right side btns
         if (bookLibrary.indexOf(i) % 2 != 0) {
+            //first right side book
             if (bookLibrary.indexOf(i) == 1) {
-                liBtn.style.right = "22.5em";
+                liBtn.style.right = "20em";
                 liBtn.style.top = `${oddBtnTopValue}em`;
+                liBtn2.style.top = `${oddBtnTopValue + 1.9}em`;
+                liBtn2.style.right = "20em";
                 oddBtnTopValue += 7;
             }
+            //other right side books
             else {
-                liBtn.style.top = `${oddBtnTopValue}em`;
-                liBtn.style.right = "22.5em";
+                liBtn.style.top = `${oddBtnTopValue + 1}em`;
+                liBtn.style.right = "20em";
+                liBtn2.style.top = `${oddBtnTopValue + 2.9}em`;
+                liBtn2.style.right = "20em"
                 oddBtnTopValue += 7;
             }
         }
-        // even remove li btns
-        else if (bookLibrary.indexOf(i) % 2 == 0) {
-            if (bookLibrary.indexOf(i) === 0) {
-                liBtn.style.left = "42.6em";
-                liBtn.style.top = `${evenBtnTopValue}em`;
-                evenBtnTopValue += 7;
-            }
-            else {
-                liBtn.style.left = "42.6em";
-                liBtn.style.top = `${evenBtnTopValue}em`;
-                evenBtnTopValue += 7;
-            }
+        //even left side btns
+        else {
+            liBtn.style.left = "37.7em";
+            liBtn.style.top = `${evenBtnTopValue}em`;
+            liBtn2.style.left = "37.7em";
+            liBtn2.style.top = `${evenBtnTopValue + 1.9}em`;
+            evenBtnTopValue += 8.2;
         }
     }
 }

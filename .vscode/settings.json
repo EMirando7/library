@@ -83,9 +83,9 @@
   "editor.find.seedSearchStringFromSelection": true,
   "editor.folding": true,
   "editor.foldingStrategy": "auto",
-  "editor.fontFamily": "Fira Code",
+  "editor.fontFamily": "Cascadia Mono",
   "editor.fontLigatures": true,
-  "editor.fontSize": 14,
+  "editor.fontSize": 15,
   "editor.fontWeight": "normal",
   "editor.formatOnPaste": true,
   "editor.formatOnSave": true,
@@ -301,7 +301,7 @@
   "editor.suggest.showWords": true,
 
   // Control whether an active snippet prevents quick suggestions.
-  "editor.suggest.snippetsPreventQuickSuggestions": true,
+  "editor.suggest.snippetsPreventQuickSuggestions": false,
 
   // Font size for the suggest widget. When set to `0`, the value of `editor.fontSize` is used.
   "editor.suggestFontSize": 0,
@@ -325,7 +325,7 @@
   "editor.tabCompletion": "on",
 
   // The number of spaces a tab is equal to. This setting is overridden based on the file contents when `editor.detectIndentation` is on.
-  "editor.tabSize": 3,
+  "editor.tabSize": 2,
 
   // Overrides editor colors and font style from the currently selected color theme.
   "editor.tokenColorCustomizations": {},
@@ -334,7 +334,7 @@
   "editor.trimAutoWhitespace": false,
 
   // Inserting and deleting whitespace follows tab stops.
-  "editor.useTabStops": true,
+  "editor.useTabStops": false,
 
   // Controls whether completions should be computed based on words in the document.
   "editor.wordBasedSuggestions": true,
@@ -399,7 +399,7 @@
   "workbench.colorCustomizations": {},
 
   // Specifies the color theme used in the workbench.
-  "workbench.colorTheme": "Andromeda Colorizer",
+  "workbench.colorTheme": "Noctis Azureus",
 
   // Controls the number of recently used commands to keep in history for the command palette. Set to 0 to disable command history.
   "workbench.commandPalette.history": 50,
@@ -504,7 +504,7 @@
   // Determines which settings editor to use by default.
   //  - ui: Use the settings UI editor.
   //  - json: Use the JSON file editor.
-  "workbench.settings.editor": "ui",
+  "workbench.settings.editor": "json",
 
   // Controls whether to enable the natural language search mode for settings. The natural language search is provided by a Microsoft online service.
   "workbench.settings.enableNaturalLanguageSearch": true,
