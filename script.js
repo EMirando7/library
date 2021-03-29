@@ -16,7 +16,18 @@ let manageBookFuncs = {
         });
     }
 }
-// push to bring form up when clicking "Add new book" btn
+// add a listner at each removeBtn that if that btn's parentnode is the same index as the child of book section, remove it
+function quitBook() {
+    const rmBtnsInD = document.querySelectorAll('.removeBtn');
+    const secPar = document.querySelector('#userAddedBooks');
+    for (let i = 0; i < rmBtnsInD.length; i++) {
+        rmBtnsInD[i].addEventListener('click', () => {
+            if (rmBtnsInD[i].parentNode === secPar.children[i]) {
+                rmBtnsInD[i].parentNode.remove();
+            }
+        })
+    }
+}
 function buttonBehaivor() {
     const btn = document.querySelector("button");
     const elem = document.getElementById("formSec");
@@ -65,10 +76,10 @@ function loopAndAddBooks() {
         bookUl.insertAdjacentElement('beforeend', liBtn);
         bookUl.insertAdjacentElement('beforeend', liBtn2);
         bookUl.style.border = "solid 0.2px";
+        bookUl.setAttribute('id', `theBookNum${bookLibrary.length - 1}`);
+        //for deleting purposes with splice
+        // bookUl.classList.add('exist');
         addGridColumns();
-        liBtn.addEventListener('click', () => {
-            bookUl.setAttribute('hidden', '');
-        })
         //odd right side btns
         if (bookLibrary.indexOf(i) % 2 != 0) {
             //first right side book
@@ -97,8 +108,9 @@ function loopAndAddBooks() {
             evenBtnTopValue += 8.2;
         }
     }
+    quitBook();
 }
-buttonBehaivor();
+buttonBehaivor()
 function addGridColumns() {
     const bookUl = document.querySelector(".addedChildBook");
     const userBooksParent = document.getElementById("userAddedBooks");
