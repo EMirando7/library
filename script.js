@@ -23,7 +23,11 @@ function quitBook() {
     for (let i = 0; i < rmBtnsInD.length; i++) {
         rmBtnsInD[i].addEventListener('click', () => {
             if (rmBtnsInD[i].parentNode === secPar.children[i]) {
+                bookLibrary.splice(0, 1);
                 rmBtnsInD[i].parentNode.remove();
+            }
+            else {
+                return
             }
         })
     }
@@ -77,8 +81,6 @@ function loopAndAddBooks() {
         bookUl.insertAdjacentElement('beforeend', liBtn2);
         bookUl.style.border = "solid 0.2px";
         bookUl.setAttribute('id', `theBookNum${bookLibrary.length - 1}`);
-        //for deleting purposes with splice
-        // bookUl.classList.add('exist');
         addGridColumns();
         //odd right side btns
         if (bookLibrary.indexOf(i) % 2 != 0) {
